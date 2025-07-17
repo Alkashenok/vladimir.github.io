@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Оплата</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Оплата заказа</h1>
+  </header>
+
+  <main class="container">
+    <form class="payment-form">
+      <label>Оплатить по номеру телефона:</label>
+      <input type="tel" placeholder="+7 (_) _--" required />
+
+      <label>Или введите данные карты:</label>
+      <input type="text" placeholder="Номер карты" maxlength="19" required />
+      <input type="text" placeholder="MM/YY" maxlength="5" required />
+      <input type="text" placeholder="CVC" maxlength="3" required />
+
+      <button type="submit">Оплатить</button>
+    </form>
+  </main>
+
+  <script>
+    document.querySelector(".payment-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Оплата прошла успешно (фиктивно)");
+      localStorage.removeItem("cart");
+      window.location.href = "index.html";
+    });
+
+    fetch("https://sheetdb.io/api/v1/YOUR_SHEETDB_ID", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({data: cart})
+    });
+  </script>
+</body>
+</html>

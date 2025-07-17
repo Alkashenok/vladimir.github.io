@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Магазин Вовочка</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="abstract-bg">
+    <div class="abstract-shape one"></div>
+    <div class="abstract-shape two"></div>
+    <div class="abstract-shape three"></div>
+    <div class="abstract-shape four"></div>
+    <div class="abstract-shape five"></div>
+    <div class="abstract-shape six"></div>
+    <div class="abstract-shape seven"></div>
+    <div class="abstract-shape eight"></div>
+  </div>
+
+  <header>
+    <div class="container">
+      <h1>Вовочка</h1>
+      <nav>
+        <a href="#">Главная</a>
+        <a href="#">Каталог</a>
+        <a href="#">Контакты</a>
+        <a href="cart.html" class="cart-link">
+          🛒 Корзина
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Популярные товары</h2>
+    <!-- Форма для входа владельца -->
+    <div id="owner-login" style="margin-bottom:20px; background:#ffe7fa; padding:18px 22px; border-radius:18px; box-shadow:0 2px 8px #ffd6e0;">
+      <h3 style="color:#ff6f91;">Вход для владельца</h3>
+      <input type="password" id="owner-password" placeholder="Пароль владельца" style="margin:7px 0; padding:7px; border-radius:8px; border:1px solid #ffb347;">
+      <button id="owner-enter" style="background:#ffb347; color:#fff; border:none; padding:10px 22px; border-radius:10px; font-weight:600; cursor:pointer;">Войти</button>
+      <div id="owner-error" style="color:#ff6f91; margin-top:8px;"></div>
+    </div>
+    <!-- Форма добавления товара (скрыта по умолчанию) -->
+    <form id="add-product-form" style="display:none; margin-bottom:30px; background:#fffbe7; padding:18px 22px; border-radius:18px; box-shadow:0 2px 8px #ffd6e0;">
+      <h3 style="color:#ff6f91;">Добавить свой товар</h3>
+      <input type="text" id="product-name" placeholder="Название товара" required style="margin:7px 0; padding:7px; border-radius:8px; border:1px solid #ffb347;">
+      <input type="text" id="product-price" placeholder="Цена (например, 1500 ₽)" required style="margin:7px 0; padding:7px; border-radius:8px; border:1px solid #ffb347;">
+      <input type="text" id="product-img" placeholder="Ссылка на изображение товара" required style="margin:7px 0; padding:7px; border-radius:8px; border:1px solid #ffb347;">
+      <button type="submit" style="background:#ffb347; color:#fff; border:none; padding:10px 22px; border-radius:10px; font-weight:600; cursor:pointer;">Добавить</button>
+    </form>
+    <section class="product-grid" id="product-list">
+      <!-- Сюда будут добавляться товары -->
+    </section>
+    <!-- Добавьте после секции с товарами -->
+    <section class="feedback-section" style="margin:40px 0;">
+      <h3 style="color:#ff6f91;">Форма обратной связи</h3>
+      <form id="feedback-form" style="background:#e3f6fd; padding:18px 22px; border-radius:18px; box-shadow:0 2px 8px #ffd6e0;">
+        <input type="text" id="feedback-name" placeholder="Ваше имя" required style="margin:7px 0; padding:7px; border-radius:8px; border:1px solid #ffb347; width:100%;">
+        <input type="email" id="feedback-email" placeholder="E-mail" required style="margin:7px 0; padding:7px; border-radius:8px; border:1px solid #ffb347; width:100%;">
+        <textarea id="feedback-message" placeholder="Ваше сообщение" required style="margin:7px 0; padding:7px; border-radius:8px; border:1px solid #ffb347; width:100%;"></textarea>
+        <button type="submit" style="background:#ffb347; color:#fff; border:none; padding:10px 22px; border-radius:10px; font-weight:600; cursor:pointer;">Отправить</button>
+      </form>
+      <div id="feedback-result" style="margin-top:12px; color:#43a047; font-weight:600;"></div>
+    </section>
+    <section style="margin:40px 0;">
+      <h3 style="color:#ff6f91;">Отзывы и рейтинг</h3>
+      <form id="review-form">
+        <input type="text" id="review-name" placeholder="Ваше имя" required>
+        <textarea id="review-text" placeholder="Ваш отзыв" required></textarea>
+        <select id="review-rating">
+          <option value="5">5 ★</option>
+          <option value="4">4 ★</option>
+          <option value="3">3 ★</option>
+          <option value="2">2 ★</option>
+          <option value="1">1 ★</option>
+        </select>
+        <button type="submit">Оставить отзыв</button>
+      </form>
+      <div id="reviews-list"></div>
+    </section>
+    <section style="margin:40px 0;">
+      <h3 style="color:#ff6f91;">Доставка и возврат</h3>
+      <p>Доставка по всей России. Возврат товара в течение 14 дней.</p>
+    </section>
+  </main>
+<div class="socials">
+  <a href="https://vk.com/" target="_blank"><img src="icons/vk.svg" alt="VK"></a>
+  <a href="https://t.me/" target="_blank"><img src="icons/telegram.svg" alt="Telegram"></a>
+  <a href="https://ok.ru/" target="_blank"><img src="icons/ok.svg" alt="Одноклассники"></a>
+  <a href="https://instagram.com/" target="_blank"><img src="icons/insta.svg" alt="Instagram"></a>
+</div>
+  <footer>
+    <div class="container">
+      <p>© 2025 Вовочка. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+// Пароль владельца (можно изменить)
+const OWNER_PASSWORD = "admin123";
+
+// Авторизация владельца
+document.getElementById("owner-enter").onclick = function() {
+  const input = document.getElementById("owner-password").value;
+  const error = document.getElementById("owner-error");
+  if (input === OWNER_PASSWORD) {
+    document.getElementById("add-product-form").style.display = "";
+    document.getElementById("owner-login").style.display = "none";
+  } else {
+    error.textContent = "Неверный пароль!";
+  }
+};
+
+// Загрузка товаров из localStorage
+function loadProducts() {
+  const defaultProducts = [
+    {name:"Комбинезон зимний", price:"3500 ₽", img:"images/product1.jpg"},
+    {name:"Платье праздничное", price:"2700 ₽", img:"images/product2.jpg"},
+    {name:"Комбинезон розовый", price:"3500 ₽", img:"images/ВАШ_ФАЙЛ.jpg"},
+    {name:"Игрушка мягкая", price:"1200 ₽", img:"images/toy.jpg"},
+    {name:"Детские ботинки", price:"2100 ₽", img:"images/shoes.jpg"},
+    {name:"Шапка зимняя", price:"800 ₽", img:"images/hat.jpg"}
+  ];
+  let products = [];
+  try {
+    const saved = JSON.parse(localStorage.getItem("products"));
+    if (Array.isArray(saved)) products = saved;
+  } catch {}
+  if (products.length === 0) products = defaultProducts;
+  return products;
+}
+
+// Сохранение товаров
+function saveProducts(products) {
+  localStorage.setItem("products", JSON.stringify(products));
+}
+
+// Отрисовка товаров
+function renderProducts() {
+  const list = document.getElementById("product-list");
+  const products = loadProducts();
+  list.innerHTML = products.map(product => `
+    <div class="product-card">
+      <img src="${product.img}" alt="${product.name}" />
+      <div class="in-stock">В наличии</div>
+      <h3>${product.name}</h3>
+      <p class="price">${product.price}</p>
+      <button class="add-to-cart">Купить</button>
+    </div>
+  `).join("");
+  document.querySelectorAll(".add-to-cart").forEach((btn, i) => {
+    btn.onclick = () => {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(loadProducts()[i]);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Товар добавлен в корзину!");
+    };
+  });
+}
+
+// Добавление нового товара
+document.getElementById("add-product-form").onsubmit = function(e) {
+  e.preventDefault();
+  const name = document.getElementById("product-name").value.trim();
+  const price = document.getElementById("product-price").value.trim();
+  const img = document.getElementById("product-img").value.trim();
+  if (!name || !price || !img) return;
+  const products = loadProducts();
+  products.push({name, price, img});
+  saveProducts(products);
+  renderProducts();
+  this.reset();
+  alert("Ваш товар добавлен!");
+};
+
+  // Форма обратной связи
+  document.getElementById("feedback-form").onsubmit = function(e) {
+    e.preventDefault();
+    document.getElementById("feedback-result").textContent =
+      "Спасибо за обращение! Мы свяжемся с вами по e-mail.";
+    this.reset();
+  };
+
+  // Инициализация каталога
+  renderProducts();
+</script>
+</body>
+</html>
